@@ -17,11 +17,16 @@ export const WelcomePage: FC = () => {
     navigate('/login');
   };
 
+  const handleTodoList = () => {
+    navigate('/todolist');
+  };
+
   return (
     <div className="welcome-page">
       <div className="welcome-page__content">
         <h1>Welcome, {email}!</h1>
         <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleTodoList}>Go to Todo List</button>
       </div>
     </div>
   );
