@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from "react";
+import { Route, Routes } from "react-router-dom";
+import { HomePage } from "./components/HomePage";
+import { Registration } from "./components/Registration";
+import { Login } from "./components/Login";
+import { WelcomePage } from "./components/WelcomePage";
 
-function App() {
+//Add additional routes for the other pages.
+export const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/register" element={<Registration />} />
+      <Route path="/login" element={<Login />}  />
+      <Route path="/welcome" element={<WelcomePage />} />
+    </Routes>
   );
-}
-
-export default App;
+};
